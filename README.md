@@ -7,7 +7,6 @@ This Python script scrapes faculty information, specifically names and email add
 NOTE: the script will have to be modified for every url based on the page structure.
 
 ## Requirements
-- `Python 3.x`
 - `pandas`
 - `requests-html`
 
