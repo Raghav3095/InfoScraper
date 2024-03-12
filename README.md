@@ -27,7 +27,7 @@ To run the script, navigate to the directory containing the script and execute i
 python faculty_scraper.py output_filename.csv
 ```
 
-The script will scrape the faculty information from the specified URL and save it to a CSV file named `filename.csv` in the same directory.
+The script will scrape the faculty information from the specified URL and save it to a CSV file in the same directory.
 
 ## Output
 The output CSV file will contain the following columns:
