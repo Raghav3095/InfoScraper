@@ -1,8 +1,15 @@
 import re
+import sys
 import requests
 import pandas as pd  
 from urllib.request import urlopen
 from requests_html import HTMLSession
+
+if len(sys.argv) != 2:
+    print("Usage: python script.py <output_filename.csv>")
+    sys.exit(1)
+    
+filename = sys.argv[1]
 
 '''url of the page to scrape'''
 
@@ -62,5 +69,4 @@ df = pd.DataFrame(dict)
     
 '''saving the dataframe''' 
 
-filename = 'filename.csv'
 df.to_csv(filename)
