@@ -4,16 +4,14 @@ import pandas as pd
 from urllib.request import urlopen
 from requests_html import HTMLSession
 
-'''
-url of the page to scrape
-'''
+'''url of the page to scrape'''
+
 url = "http://math.iisc.ac.in/faculty.html"
 # page = urlopen(url)
 # html_code = page.read().decode("utf-8")
 
-'''
-regex for email findall(pattern, source) if the method with response.html.find() does not work
-'''
+'''regex for email findall(pattern, source) if the method with response.html.find() does not work'''
+
 # links = re.findall("mailto:.*?.in", html_code)
 # links_list = [s.replace('mailto:', '') for s in links]
 # print(link_replace)
@@ -24,9 +22,7 @@ try:
 except requests.exceptions.RequestException as e:
     print(e)
 
-'''
-.class or #id selector to access specific sections followd by the tag to access (h4/p/small etc.)
-'''
+'''.class or #id selector to access specific sections followd by the tag to access (h4/p/small etc.)'''
 
 name = response.html.find('.table .col-md-10 a')
 # lname = response.html.find('#cn-team-container-7fba6628 .family-name')
@@ -42,23 +38,20 @@ for i in range(len(name)):
     # desig_list.append(desig[i].text)
     email_list.append(email[i].text)
 
-'''
-Checking data recieved
-'''
+'''Checking data recieved'''
+
 # print(name_list)
 # print(len(name_list), len(lname_list), len(desig_list), len(email_list))
 
-'''
-Cleaning data according to requirements
-'''
+'''Cleaning data according to requirements'''
+
 email_list = [s.replace('UserID : ', '') for s in email_list]
 email_list = [s + '@iisc.ac.in' for s in email_list]
 # print(name_list[:5], email_list[:5])
 # links_list.append('')
 
-'''
-Writing to csv file
-'''
+'''Writing to csv file'''
+
 dict = {
     'FName': name_list,
     # 'LName': lname_list,
@@ -67,7 +60,7 @@ dict = {
        
 df = pd.DataFrame(dict) 
     
-'''
-saving the dataframe
-''' 
-df.to_csv('Ashoka.csv')
+'''saving the dataframe''' 
+
+filename = 'filename.csv'
+df.to_csv(filename)
