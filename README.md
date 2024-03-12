@@ -4,6 +4,8 @@
 ## Description
 This Python script scrapes faculty information, specifically names and email addresses. The data extracted is then compiled into a CSV file for easy access and manipulation. The script utilizes `requests-html` for web scraping and `pandas` for data manipulation and saving.
 
+NOTE: the script will have to be modified for every url based on the page structure.
+
 ## Requirements
 - `Python 3.x`
 - `pandas`
@@ -23,7 +25,7 @@ pip install pandas requests-html
 To run the script, navigate to the directory containing the script and execute it with Python:
 
 ```bash
-python faculty_scraper.py
+python faculty_scraper.py output_filename.csv
 ```
 
 The script will scrape the faculty information from the specified URL and save it to a CSV file named `filename.csv` in the same directory.
