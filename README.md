@@ -1,5 +1,6 @@
 # InfoScraper
-Web scraper created to extract information for ConfAI mails.
+
+Web scraper created to extract information for mailing list.
 
 Replace the url of the website from which to scrape in the script.
 
